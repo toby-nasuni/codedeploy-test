@@ -8,12 +8,15 @@ files:
 permissions:
   - object: /var/www/html
     pattern: newpage.html
-    mode: 755
+    owner: apache
+    group: apache
+    mode: 644
     type:
       - file
 
 hooks:
   BeforeInstall:
     - location: scripts/webserver-stop.sh
+    - location: scripts/delete-old-index.sh
   AfterInstall:
     - location: scripts/webserver-start.sh
