@@ -1,0 +1,1 @@
+Remove-Item C:\\inetpub\\www-root\*.*
