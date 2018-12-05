@@ -22,7 +22,9 @@ permissions:
 
 hooks:
   BeforeInstall:
+    - location: scripts/deregister_from_elb.sh
     - location: scripts/webserver-stop.sh
     - location: scripts/move-previous.sh
   AfterInstall:
     - location: scripts/webserver-start.sh
+    - location: scripts/register_with_elb.sh
